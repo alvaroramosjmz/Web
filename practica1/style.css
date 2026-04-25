@@ -32,7 +32,7 @@ a:hover{
 /* Cabecera -------------------------------------------------*/
 
 header{
-    display:flex;
+    display:flex; /* Flexbox para alinear logo, titulo y nav*/
     justify-content:space-between;
     align-items:center;
     gap:2%;
@@ -208,6 +208,8 @@ footer{
     gap:4%;
     margin-bottom:1%;
 }
+
+
 
 /* CAMBIOS PARA NOTICIA.HTML */
 
