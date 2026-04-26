@@ -1,0 +1,19 @@
+<p>{{ noticia.descripcion }}</p>
+
+<div class="datos_noticia">
+    <p><strong>Fecha de publicación:</strong> {{ noticia.fecha }}</p>
+    <p><strong>Tipo:</strong> {{ noticia.tipo }}</p>
+    <p><strong>Concejalía asociada:</strong> {{ noticia.concejalia }}</p>
+    <p><strong>Responsables:</strong> {{ noticia.responsables }}</p>
+    <p><strong>Localidad:</strong> {{ noticia.poblacion }}</p>
+</div>
+
+<h2>Fotografías de la incidencia</h2>
+<section class="galeria_noticia">
+    {% for imagen in imagenes %}
+        <figure class="foto_noticia">
+            <img src="/images/{{ imagen.nombre_archivo }}" alt="{{ noticia.titulo }}">
+            <p>{{ imagen.nombre_archivo }}</p>
+        </figure>
+    {% endfor %}
+</section>

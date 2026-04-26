@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Incidencias Urbanas - LPGC</title>
+    {% block css %}
+        <link rel="stylesheet" href="/style.css">
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/icono_incidencias_recortada.png">
+</head>
+
+<body>
+    <header>
+        <a href="/portada.php" class="logo" title="Volver a la portada">
+            <img src="/images/logo_incidencias_recortado.png" alt="Logo del portal">
+        </a>
+        <h1 class="titulo">Incidencias Urbanas - LPGC</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.laspalmasgc.es/es/" target="_blank">Ayuntamiento</a></li>
+                <li><a href="https://www.laspalmasgc.es/es/otras-secciones/cita-previa/" target="_blank">Cita Previa</a></li>
+                <li><a href="https://www.laspalmasgc.es/es/online/sede-electronica/index.html" target="_blank">Sede Electrónica</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="principal">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="/portada.php">Menu1</a></li>
+                <li><a href="/portada.php">Menu2</a></li>
+                <li><a href="/portada.php">Menu3</a></li>
+            </ul>
+        </aside>
+
+        {% block contenido %}{% endblock %}
+    </div>
+
+    <footer>
+        <div class="contenido_footer">
+            <p>Portal ciudadano de incidencias urbanas</p>
+            <a href="https://www.laspalmasgc.es/es/" target="_blank">Ayuntamiento LPGC</a>
+            <a href="https://www.laspalmasgc.es/es/otras-secciones/aviso-legal/" target="_blank">Aviso legal</a>
+        </div>
+        <p>&copy; 2026 Incidencias - LPGC</p>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

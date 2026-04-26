@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block contenido %}
+    <div class="contenido_principal">
+        {% for noticia in noticias %}
+            <section class="incidencia">
+                <a href="/noticia.php?id={{ noticia.id }}">
+                    <img src="/images/{{ noticia.imagen }}" alt="{{ noticia.titulo }}">
+                    <p>{{ noticia.titulo }}</p>
+                </a>
+            </section>
+        {% endfor %}
+    </div>
+{% endblock %}

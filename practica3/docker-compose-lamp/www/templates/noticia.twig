@@ -1,0 +1,71 @@
+{% extends "base.twig" %}
+
+{% block contenido %}
+
+    <section class="contenido_noticia">
+        <article class="noticia_detalle">
+            <div class="cabecera_noticia">
+                <h1>{{ noticia.titulo }}</h1>
+                <div class="redes_sociales">
+                    <ul>
+                        <li><a href="https://www.instagram.com/" target="_blank" title="Instagram"><img src="/images/logo_instagram.png" alt="Instagram"></a></li>
+                        <li><a href="https://twitter.com/" target="_blank" title="X"><img src="/images/logo_X.png" alt="X"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank" title="TikTok"><img src="/images/logo_tiktok.png" alt="TikTok"></a></li>
+                        <li><a href="/noticia_imprimir.php?id={{ noticia.id }}" title="Imprimir"><img src="/images/logo_imprimir.png" alt="Imprimir"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            {% include "noticia_base.twig" %}
+        </article>
+    </section>
+
+    <div id="zonaComentarios"></div>
+
+    <aside id="panelComentarios" class="panel_comentarios">
+        <div class="cabecera_panel_comentarios">
+            <h2>Comentarios</h2>
+            <button id="cerrarPanel" type="button">X</button>
+        </div>
+
+        <div id="zonaNuevoComentario">
+            <button id="botonNuevoComentario" type="button">Comentario nuevo</button>
+        </div>
+
+        <div id="formularioComentario" class="oculto">
+            <div class="cabecera_formulario">
+                <h3>Nuevo comentario</h3>
+                <button id="cerrarFormulario" type="button">X</button>
+            </div>
+
+            <label for="nombreComentario">Nombre</label>
+            <input type="text" id="nombreComentario">
+
+            <label for="emailComentario">E-mail</label>
+            <input type="text" id="emailComentario">
+
+            <label for="textoComentario">Texto del comentario</label>
+            <textarea id="textoComentario" rows="5"></textarea>
+
+            <button id="enviarComentario" type="button">Enviar</button>
+        </div>
+
+        <div id="listaComentarios"></div>
+    </aside>
+
+    <div id="fondoModal" class="oculto">
+        <div id="ventanaModal">
+            <h3 id="tituloModal">Aviso</h3>
+            <p id="mensajeModal"></p>
+            <button id="cerrarModal" type="button">Aceptar</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        const localidades = {{ localidades|json_encode|raw }};
+        const comentariosIniciales = {{ comentarios|json_encode|raw }};
+    </script>
+    <script src="/comentarios.js"></script>
+{% endblock %}
